@@ -1,0 +1,19 @@
+<p>ביצוע הזמנה לפי כמות סועדים</p>
+<br><br>
+<p>בחר צלחת</p>
+<select  [(ngModel)]="plate" id="ddlViewBy">
+  <option *ngFor="let item of allPlats" [ngValue]="item.idProduct">{{item.nameProduct}}{{item.color}}{{item.size}}</option>
+</select>
+<br>
+<br>
+<p>בחר כוס</p>
+<select  [(ngModel)]="glass" id="ddlViewBy">
+  <option *ngFor="let item of allGlasses" [ngValue]="item.idProduct">{{item.nameProduct}}{{item.color}}{{item.size}}</option>
+</select>
+<br>
+<br>
+<p>הכנס מספר סועדים</p>
+<input type="number" [(ngModel)]="numDinners">
+<br>
+<br>
+<input type="button" value="אישור" (click)="orderByAmountOfDiners()">

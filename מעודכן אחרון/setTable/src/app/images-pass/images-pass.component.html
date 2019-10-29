@@ -1,0 +1,38 @@
+<app-carusela></app-carusela>
+<input type="button" value="הזמנה לפי מספר סועדים" (click)="orderByAmountOfDiners()">
+<br>
+<div id="allBasket">
+  ({{qtyCart}})סל הקניות שלי
+  <img src="../assets/images/סל קניות.png" id="myBasket" (click)="addOfBasket()">
+</div>
+<label>סנן לפי צבע</label>
+<br>
+<select (change)="functionToCall();" [(ngModel)]="colorChange" id="ddlViewBy">
+  <option *ngFor="let item of colorGroups" value="{{item}}">{{item}}</option>
+</select>
+<br>
+<label>סנן לפי סוג</label>
+<br>
+<select (change)="functionToModel();" [(ngModel)]="ModelChange" id="ddlViewBy">
+  <option *ngFor="let item of typeGroups" value="{{item}}">{{item}}</option>
+</select>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let item of selectproduct;let index =index" class="p-3 col-lg-3 col-md-6 col-12" style="width: 18rem;">
+      <div class="card">
+        <img [src]="item.imgShow" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">
+            {{item.nameProduct}} {{item.size}} {{item.model}} בצבע {{item.color}} {{item.price}} שקל
+          </p>
+          <div><button (click)="addToCart(item)" class="qtyA">הוסף לסל</button>
+            <button (click)="less(item,index)" class="qtyA">-</button>
+            <span *ngIf="item.qty" class="qty" id="qty_598">{{item.qty}}</span>
+            <span *ngIf="item.qty==0" class="qty" id="qty_598">{{item.qty}}</span>
+            <button (click)="add(item,index)" class="qtyA">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

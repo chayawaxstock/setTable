@@ -1,0 +1,5 @@
+<div *ngFor="let item of allOrdersPrevious">
+  {{item.nameProduct}}
+</div>
+<div *ngIf="allOrdersPrevious.length==0">אין הזמנות קודמות</div>
+<button (click)="continue()">המשך בקניה</button>
