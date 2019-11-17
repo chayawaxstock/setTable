@@ -8,7 +8,7 @@ namespace BLL
 {
     public class CustomerLogic
     {
-        public static DAL.SetTable1Entities4 db = new DAL.SetTable1Entities4();
+        public static DAL.SetTable1Entities5 db = new DAL.SetTable1Entities5();
 
         #region מחזירה את כל ההזמנות הקודמות לפי מזהה לקוח
         public static List<DTO.Order> GetAllPreviousOrders(int idCustomer)

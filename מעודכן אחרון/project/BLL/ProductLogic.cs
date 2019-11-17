@@ -11,7 +11,7 @@ namespace BLL
 {
     public class ProductLogic
     {
-        public static DAL.SetTable1Entities4 db = new DAL.SetTable1Entities4();
+        public static DAL.SetTable1Entities5 db = new DAL.SetTable1Entities5();
         #region  כל המוצרים
         public static List<DTO.Product> GetAllProduct()
         {

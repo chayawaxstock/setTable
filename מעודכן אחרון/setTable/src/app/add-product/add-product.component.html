@@ -1,41 +1,26 @@
-<p>
+<div style="direction: rtl;text-align: right;width: 24vw;margin-right: 6vw;">
+<h3>
     הוספת מוצר
-  </p>
-  <form (ngSubmit)="onSubmit()">
+</h3>
+  <form style="direction: rtl;text-align: right;" (ngSubmit)="onSubmit()">
     <label>שם מוצר</label>
-    <br>
-  <input type="text" name= nameProduct [(ngModel)]="newProduct.nameProduct">
-  <br>
+  <input class="form-control  "type="text" name= nameProduct [(ngModel)]="newProduct.nameProduct">
   <label>מחיר</label>
-  <br>
-  <input type="number" name= price [(ngModel)]="newProduct.price">
-  <br>
+  <input class="form-control" type="number" name= price [(ngModel)]="newProduct.price">
   <label>כמות במלאי</label>
-  <br>
   
-  <input type="number" name= unitsInStock [(ngModel)]="newProduct.unitsInStock">
-  <br>
+  <input class="form-control" type="number" name= unitsInStock [(ngModel)]="newProduct.unitsInStock">
   <label>מספר קטגוריה</label>
-  <br>
-  <input type="number" name= numCategory [(ngModel)]="newProduct.numCategory">
-  <br>
+  <input type="number" class="form-control" name= numCategory [(ngModel)]="newProduct.numCategory">
   <label>צבע</label>
-  <br>
-  <input type="text" name= color [(ngModel)]="newProduct.color">
-  <br>
+  <input type="text" class="form-control" name= color [(ngModel)]="newProduct.color">
   <label>תאור</label>
-  <br>
-  <input type="text" name= model [(ngModel)]="newProduct.model">
-  <br>
+  <input type="text" class="form-control" name= model [(ngModel)]="newProduct.model">
   <label>גודל</label>
-  <br>
-  <input type="text" name= size [(ngModel)]="newProduct.size">
-  <br>
+  <input type="text" class="form-control" name= size [(ngModel)]="newProduct.size">
   <label>שם קטגוריה</label>
-  <br>
-  <input type="text" name= type [(ngModel)]="newProduct.type">
-  <br>
-  <input  type="file" style="margin-right: 20px;margin-top: 35px;" (change)="filesPicked($event.target.files)" >
-  <br>
-  <input type="submit" value="הוסף">
+  <input type="text" class="form-control" name= type [(ngModel)]="newProduct.type">
+  <input  type="file" class="form-control" style="margin-right: 20px;margin-top: 35px;" (change)="filesPicked($event.target.files)" >
+  <input type="submit" class="btn btn-primary" value="הוסף" >
   </form>
+</div>

@@ -1,25 +1,21 @@
 
-<p>לקוח חדש</p>
-<form #myForm="ngForm" (ngSubmit)="onSubmit()">
-  <p>:פרטים אישיים</p>
-  <label>:שם מלא</label>
-  <input type="text" name= nameCustomer #nameCustomer="ngModel" [(ngModel)]="newCustomer.nameCustomer">
-  <br>
-  <label>:סיסמא</label>
-  <input type="text" name= password  #password="ngModel" [(ngModel)]="newCustomer.password">
-  <br>
-  <br>
-  <label>:כתובת</label>
-    <input type="text" name= street #street="ngModel" [(ngModel)]="newCustomer.street">
-    <br>
-    <br>
-    <label>:טלפון</label>
-  <input type="text" name= phone #phone="ngModel" [(ngModel)]="newCustomer.phone">
-  <br>
-  <br>
-  <label>:אימייל </label>
-  <input type="text" name= email #email="ngModel" [(ngModel)]="newCustomer.email">
-  <br>
-  <br>
-  <input type="submit" value="הרשם">
+<div class="" style="    margin-right: 480px;
+margin-top: 44px;">
+<h2>לקוח חדש</h2>
+
+<form style="direction: rtl;text-align: right;margin-right: 2vw;" #myForm="ngForm" (ngSubmit)="onSubmit()">
+  <p>פרטים אישיים</p>
+  <label>שם מלא</label>
+  <input type="text" class="form-control col-3" name= nameCustomer #nameCustomer="ngModel" [(ngModel)]="newCustomer.nameCustomer">
+  <label>סיסמא</label>
+  <input type="text" class="form-control col-3" name= password  #password="ngModel" [(ngModel)]="newCustomer.password">
+  <label>כתובת</label>
+    <input type="text" class="form-control col-3" name= street #street="ngModel" [(ngModel)]="newCustomer.street">
+    <label>טלפון</label>
+  <input type="text" class="form-control col-3" name= phone #phone="ngModel" [(ngModel)]="newCustomer.phone">
+
+  <label>אימייל </label>
+  <input type="text" class="form-control col-3" name= email #email="ngModel" [(ngModel)]="newCustomer.email">
+  <input style="margin-top: 1vh;" type="submit" class="btn btn-primary" value="הרשם">
 </form>
+</div>

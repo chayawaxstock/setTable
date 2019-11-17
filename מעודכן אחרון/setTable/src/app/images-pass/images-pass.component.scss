@@ -17,5 +17,8 @@ $lightblue:#00a0e3;
   height: 5vh;
 }
 #allBasket{
+  cursor: pointer;
+  direction: ltr !important;
+  text-align: left;
   color:$lightblue;
 }

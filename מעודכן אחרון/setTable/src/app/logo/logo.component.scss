@@ -21,17 +21,21 @@ img{
      background-image: "logo.png";
     background-color:transparent;
  }
-.login{
+.login{  
+    cursor: pointer;    
     width: 20vw;
     height: 10vh;
     display: inline-block;
-    background-color: #666;
+    // background-color: #666;
     margin-left: 10vw;
     color:#007bff;
     margin-top: 10vh;
     font-size: 150%;
     text-align: center;
 }
+.login:hover {
+    background-color: rgb(235, 233, 233);
+  }
 
 #music{
     display:none;

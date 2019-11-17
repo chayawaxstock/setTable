@@ -3,25 +3,23 @@ body{
    }
    #div{
        width: inherit;
-       height: 33vh;
+       height: 10vh;
        background-image: linear-gradient(to right, #666 ,white ,#666); 
    }
    img{
-       
+    margin-top: 8px;
         margin-left:30vw;
     }
-    #divimg{
-       position: relative;
-      bottom:10vw;
-        text-align: top;
+    #divimg {
+        position: relative;
+        bottom: 10.5vw;
         display: inline-block;
-        width:50vw;
-        height: 30vh;
-        margin-left: 15vW;
+        width: 17vw;
+        height: 1vh;
+        margin-left: 35.5vW;
         margin-top: 23vh;
-       font-family: serif;
-        background-image: "logo.png";
-       background-color:transparent;
+        font-family: serif;
+        background-color: transparent;
     }
    .login{
        width: 20vw;

@@ -1,3 +1,5 @@
+<div style="direction: rtl;text-align: right;    margin-top: 10vh;
+">
 <table id="table">
     <thead>
       <tr>
@@ -30,17 +32,18 @@
       </tr>
     </tbody>
   </table>
-  <p>
+  <h3 style="margin-right: 4vw;">
     מחיקת מוצר
-  </p>
+  </h3>
   
-  <form (ngSubmit)="onSubmit()" name="form" [formGroup]="myFormGroup">
+  <form style="margin-right: 4vw;" (ngSubmit)="onSubmit()" name="form" [formGroup]="myFormGroup">
     <!-- <label>
       הקש מזהה מוצר
     </label> -->
     <!-- <input type="number" formControlName="num"> -->
-   <select  id="ddlViewBy" formControlName="num">
+   <select  id="ddlViewBy" formControlName="num" class="form-control col-2" style="margin-bottom: 15px;">
   <option *ngFor="let item of allproduct" [ngValue]="item.idProduct">{{item.nameProduct}}{{item.color}}{{item.size}}</option>      
     </select>
-    <input type="submit" value="delete">
+    <input type="submit" class="btn btn-primary col-2"  value="מחק">
   </form>
+</div>

@@ -24,4 +24,8 @@ export class PreviousOrdersComponent implements OnInit {
   {
     this.route.navigate(['products']);
   }
+  products()
+  {
+    this.route.navigate(['products']);
+  }
 }

@@ -29,7 +29,7 @@ export class AnnualRevenueDiagramComponent implements OnInit {
    this.dataSource = {
        "chart": {
          "caption": "הכנסות לשנת 2019",
-         "subCaption": "In MMbbl = One Million barrels",
+         "subCaption": "",
          "xAxisName": "חודשים",
          "yAxisName": "הכנסות",
          "numberSuffix": "ש.ח",

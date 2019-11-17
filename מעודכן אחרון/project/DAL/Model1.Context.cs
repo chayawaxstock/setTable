@@ -13,10 +13,10 @@ namespace DAL
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SetTable1Entities4 : DbContext
+    public partial class SetTable1Entities5 : DbContext
     {
-        public SetTable1Entities4()
-            : base("name=SetTable1Entities4")
+        public SetTable1Entities5()
+            : base("name=SetTable1Entities5")
         {
         }
     
@@ -27,10 +27,10 @@ namespace DAL
     
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<EditTable> EditTables { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<OrderBasket> OrderBaskets { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductOfOrder> ProductOfOrders { get; set; }
-        public virtual DbSet<EditTable> EditTables { get; set; }
     }
 }

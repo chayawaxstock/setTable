@@ -1,79 +1,75 @@
-
-// body{
-//  overflow: hidden;
-// }
-// #div{
-//     width: inherit;
-//     height: 33vh;
-//     background-image: linear-gradient(to right, gray , white); 
-// }
-// img{
-    
-//      margin-left:30vw;
-//  }
-//  #walcome{
-//      margin-left: 15vw;
-//      display: inline-block;
-//      margin-top: 6vw;
-//      //margin-bottom:8vw;
-//     color:  #00a0e3;
-//     font-size: 3vw;
-//  }
-//  #divimg{
-//     position: relative;
-//    bottom:10vw;
-//      text-align: top;
-//      display: inline-block;
-//      width:50vw;
-//      height: 30vh;
-//      margin-left: 50vW;
-//     //  margin-top: 2vw;
-//     font-family: serif;
-//      background-image: "logo.png";
-//     background-color:transparent;
-//  }
-#ok{
-    width: 28vw;
-    height: 10vh;
-    font-size: 1.25rem;
-    line-height: 1.5;
-    border-radius: .3rem;
-    color: #fff;
-    background-color:  #bdbebe;
-    border-color:#007bff;
-    margin-top: 5vh;
+.form-signin
+{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
 }
-
-form{
-    margin-left: 40vw;
-    margin-top: 10vh;
-    border-color: black;
-    background-color:  #007bff;
-    width: 30vw;
-    height:80vh;
+.form-signin .form-signin-heading, .form-signin .checkbox
+{
+    margin-bottom: 10px;
 }
-input{
-    background: #fff;
-    width: 90%;
-    max-width: 100%;
-    display: inline-block;
-    color: #666;
-    font-family: inherit;
-    font-weight: inherit;
-    font-size: 1em;
-    line-height: 1.65;
-    max-width: 100%;
-    border: 1px solid #e1e1e1;
-    background: #fff;
-    border-radius: 3px;
-    margin-top: 5vh;
-    padding: 2vh;
-    margin-left: 1vw;
+.form-signin .checkbox
+{
+    font-weight: normal;
 }
-img{
-    width: 30%;
-    height: 30%;
-    margin-left: 10vw;
-    margin-top: 4vh;
-    border-radius: 1000%;
+.form-signin .form-control
+{
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin .form-control:focus
+{
+    z-index: 2;
+}
+.form-signin input[type="text"]
+{
+    margin-bottom: -1px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"]
+{
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.account-wall
+{
+    margin-top: 20px;
+    padding: 40px 0px 20px 0px;
+    background-color: #f7f7f7;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.login-title
+{
+    color: #555;
+    font-size: 18px;
+    font-weight: 400;
+    display: block;
+}
+.profile-img
+{
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.need-help
+{
+    margin-top: 10px;
+}
+.new-account
+{
+    display: block;
+    margin-top: 10px;
 }

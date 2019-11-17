@@ -20,3 +20,14 @@ C:\Users\מחשב\Desktop\project\DAL\obj\Debug\DAL.csprojResolveAssemblyReferen
 C:\Users\מחשב\Desktop\project\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\מחשב\Desktop\project\DAL\obj\Debug\DAL.dll
 C:\Users\מחשב\Desktop\project\DAL\obj\Debug\DAL.pdb
+C:\Users\User\Music\setTable\מעודכן אחרון\project\DAL\bin\Debug\DAL.dll.config
+C:\Users\User\Music\setTable\מעודכן אחרון\project\DAL\bin\Debug\DAL.dll
+C:\Users\User\Music\setTable\מעודכן אחרון\project\DAL\bin\Debug\DAL.pdb
+C:\Users\User\Music\setTable\מעודכן אחרון\project\DAL\bin\Debug\EntityFramework.dll
+C:\Users\User\Music\setTable\מעודכן אחרון\project\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\User\Music\setTable\מעודכן אחרון\project\DAL\bin\Debug\EntityFramework.xml
+C:\Users\User\Music\setTable\מעודכן אחרון\project\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\User\Music\setTable\מעודכן אחרון\project\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\User\Music\setTable\מעודכן אחרון\project\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\User\Music\setTable\מעודכן אחרון\project\DAL\obj\Debug\DAL.dll
+C:\Users\User\Music\setTable\מעודכן אחרון\project\DAL\obj\Debug\DAL.pdb

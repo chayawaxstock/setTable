@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="SetTable1ModelStoreContainer" CdmEntityContainer="SetTable1Entities4">
+  <EntityContainerMapping StorageEntityContainer="SetTable1ModelStoreContainer" CdmEntityContainer="SetTable1Entities5">
     <EntitySetMapping Name="Categories">
       <EntityTypeMapping TypeName="SetTable1Model.Category">
         <MappingFragment StoreEntitySet="Category">
@@ -18,6 +18,17 @@
           <ScalarProperty Name="street" ColumnName="street" />
           <ScalarProperty Name="phone" ColumnName="phone" />
           <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EditTables">
+      <EntityTypeMapping TypeName="SetTable1Model.EditTable">
+        <MappingFragment StoreEntitySet="EditTable">
+          <ScalarProperty Name="idPlate" ColumnName="idPlate" />
+          <ScalarProperty Name="idGlass" ColumnName="idGlass" />
+          <ScalarProperty Name="idPlateBig" ColumnName="idPlateBig" />
+          <ScalarProperty Name="imageAll" ColumnName="imageAll" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -65,17 +76,6 @@
           <ScalarProperty Name="idOrder" ColumnName="idOrder" />
           <ScalarProperty Name="idProduct" ColumnName="idProduct" />
           <ScalarProperty Name="quantity" ColumnName="quantity" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="EditTables">
-      <EntityTypeMapping TypeName="SetTable1Model.EditTable">
-        <MappingFragment StoreEntitySet="EditTable">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="imageAll" ColumnName="imageAll" />
-          <ScalarProperty Name="idPlateBig" ColumnName="idPlateBig" />
-          <ScalarProperty Name="idGlass" ColumnName="idGlass" />
-          <ScalarProperty Name="idPlate" ColumnName="idPlate" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

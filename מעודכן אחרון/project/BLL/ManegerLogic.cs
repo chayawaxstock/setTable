@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
+
 
 namespace BLL
 {
     public class ManegerLogic
     {
-        public static DAL.SetTable1Entities4 db = new DAL.SetTable1Entities4();
+        public static DAL.SetTable1Entities5 db = new DAL.SetTable1Entities5();
 
         #region הפונקציה מחזירה את כל המוצרים
         public static List<DTO.Product> GetAllProduct()

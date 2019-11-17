@@ -10,7 +10,7 @@ import Swal from 'sweetalert2'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  loginUser = new LoginUser();
+  loginUser:LoginUser = new LoginUser();
   constructor(private loginService: LoginUserService, private route: Router) { }
 
   ngOnInit() {

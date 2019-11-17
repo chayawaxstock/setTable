@@ -10,7 +10,7 @@ namespace BLL
 {
     public class EditTableLogic
     {
-        public static DAL.SetTable1Entities4 db = new DAL.SetTable1Entities4();
+        public static DAL.SetTable1Entities5 db = new DAL.SetTable1Entities5();
 
         public static List<DTO.Product> getPlate()
         {

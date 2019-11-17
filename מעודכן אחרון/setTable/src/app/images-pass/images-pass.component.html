@@ -1,21 +1,24 @@
 <app-carusela></app-carusela>
-<input type="button" value="הזמנה לפי מספר סועדים" (click)="orderByAmountOfDiners()">
+<div style="text-align: right;;direction: rtl;">
+  <div id="allBasket">
+    ({{qtyCart}})סל הקניות שלי
+    <img src="../assets/images/סל קניות.png" id="myBasket" (click)="addOfBasket()">
+  </div>
+<input type="button" class="btn btn-link" value="הזמנה לפי מספר סועדים" (click)="orderByAmountOfDiners()">
 <br>
-<div id="allBasket">
-  ({{qtyCart}})סל הקניות שלי
-  <img src="../assets/images/סל קניות.png" id="myBasket" (click)="addOfBasket()">
-</div>
-<label>סנן לפי צבע</label>
+<div class="row" style="margin-right: 3vw;">
+<label style="margin-left: 1vw;">סנן לפי צבע</label>
 <br>
-<select (change)="functionToCall();" [(ngModel)]="colorChange" id="ddlViewBy">
+<select class="form-control col-2" (change)="functionToCall();" [(ngModel)]="colorChange" id="ddlViewBy">
   <option *ngFor="let item of colorGroups" value="{{item}}">{{item}}</option>
 </select>
 <br>
-<label>סנן לפי סוג</label>
+<label style="margin-right: 3vw;margin-left: 1vw;">סנן לפי סוג</label>
 <br>
-<select (change)="functionToModel();" [(ngModel)]="ModelChange" id="ddlViewBy">
+<select class="form-control col-2" (change)="functionToModel();" [(ngModel)]="ModelChange" id="ddlViewBy">
   <option *ngFor="let item of typeGroups" value="{{item}}">{{item}}</option>
 </select>
+</div>
 <div class="container">
   <div class="row">
     <div *ngFor="let item of selectproduct;let index =index" class="p-3 col-lg-3 col-md-6 col-12" style="width: 18rem;">
@@ -35,4 +38,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

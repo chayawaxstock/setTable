@@ -8,7 +8,7 @@ namespace BLL
 {
     public class CategoryLogic
     {
-        public static DAL.SetTable1Entities4 db = new DAL.SetTable1Entities4();
+        public static DAL.SetTable1Entities5 db = new DAL.SetTable1Entities5();
         #region כל הקטגוריות
         public static List<DTO.Category> GetAllCategories()
         {

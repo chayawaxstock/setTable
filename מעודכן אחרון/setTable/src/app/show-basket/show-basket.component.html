@@ -1,20 +1,15 @@
-
-  <table>
-    <tr>
-       <th>:מחיר כולל</th>
-        <th> : כמות </th> 
-        <th>:מוצר</th>
-    </tr>
-    <tr *ngFor="let item of products">
-       <td>{{item.price*item.qty}}</td> 
-        <td> חבילות{{item.qty}} </td>
-        <td>{{item.nameProduct}}<img [src]="item.imgShow" class="card-img-top" alt="...">
-        </td>
-    </tr>
-  </table>
-  <button (click)="confirm()">אישור הזמנה</button>
-
+<table style="direction: rtl;text-align: right;" class="table  table-striped">
+  <tr>
+    <th>מוצר</th> 
+    <th> כמות </th>
+    <th>מחיר כולל</th>
+   
+  </tr>
+  <tr *ngFor="let item of products">
  
-
-
-
+    <td>{{item.nameProduct}}<img [src]="item.imgShow" class="card-img-top" alt="..."> </td>      
+    <td>{{item.qty}}  חבילות</td>
+     <td> {{item.price*item.qty}} שח</td>
+  </tr>
+</table>
+<button style="    margin-left: 115px;" class="btn btn-primary" (click)="confirm()">אישור הזמנה</button>
