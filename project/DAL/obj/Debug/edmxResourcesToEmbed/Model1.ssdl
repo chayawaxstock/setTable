@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SetTable1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="numCategory" />
+    </Key>
+    <Property Name="numCategory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nameCategory" Type="nchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="idCustomer" />
+    </Key>
+    <Property Name="nameCustomer" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="nchar" MaxLength="8" Nullable="false" />
+    <Property Name="idCustomer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="street" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="phone" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="email" Type="nchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="EditTable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="idPlate" Type="int" />
+    <Property Name="idGlass" Type="int" />
+    <Property Name="idPlateBig" Type="int" />
+    <Property Name="imageAll" Type="text" />
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="idOrder" />
+    </Key>
+    <Property Name="idOrder" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="idCustomer" Type="int" Nullable="false" />
+    <Property Name="paymant" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderBasket">
+    <Key>
+      <PropertyRef Name="idProduct" />
+    </Key>
+    <Property Name="idProduct" Type="int" Nullable="false" />
+    <Property Name="idCustomer" Type="int" Nullable="false" />
+    <Property Name="quantity" Type="int" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="idProduct" />
+    </Key>
+    <Property Name="idProduct" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nameProduct" Type="nchar" MaxLength="40" Nullable="false" />
+    <Property Name="price" Type="float" Nullable="false" />
+    <Property Name="unitsInStock" Type="int" Nullable="false" />
+    <Property Name="numCategory" Type="int" Nullable="false" />
+    <Property Name="color" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="model" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="size" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="active" Type="bit" />
+    <Property Name="showInSite" Type="bit" />
+    <Property Name="img" Type="nvarchar(max)" />
+    <Property Name="quentityInShop" Type="int" Nullable="false" />
+    <Property Name="type" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ProductOfOrder">
+    <Key>
+      <PropertyRef Name="idOrder" />
+      <PropertyRef Name="idProduct" />
+    </Key>
+    <Property Name="idOrder" Type="int" Nullable="false" />
+    <Property Name="idProduct" Type="int" Nullable="false" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_idCust">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="idCustomer" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="idCustomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="ProductOfOrder" Type="Self.ProductOfOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="idOrder" />
+      </Principal>
+      <Dependent Role="ProductOfOrder">
+        <PropertyRef Name="idOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderBasket_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="OrderBasket" Type="Self.OrderBasket" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="idProduct" />
+      </Principal>
+      <Dependent Role="OrderBasket">
+        <PropertyRef Name="idProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_orderProduct">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="ProductOfOrder" Type="Self.ProductOfOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="idProduct" />
+      </Principal>
+      <Dependent Role="ProductOfOrder">
+        <PropertyRef Name="idProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SetTable1ModelStoreContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EditTable" EntityType="Self.EditTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderBasket" EntityType="Self.OrderBasket" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductOfOrder" EntityType="Self.ProductOfOrder" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_idCust" Association="Self.FK_idCust">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_order" Association="Self.FK_order">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="ProductOfOrder" EntitySet="ProductOfOrder" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderBasket_Product" Association="Self.FK_OrderBasket_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="OrderBasket" EntitySet="OrderBasket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_orderProduct" Association="Self.FK_orderProduct">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductOfOrder" EntitySet="ProductOfOrder" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

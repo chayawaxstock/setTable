@@ -1,0 +1,11 @@
+<div id="img"><img [src]="imgShow" class="card-img-top" alt="..." style="width: 18rem;"></div>
+
+<p>הכנס מספר סועדים בין 2 -10</p>
+<input  type="number" max="10" min="2" [(ngModel)]="num">
+<button (click)="click()">אישור</button>
+<div class="row" *ngIf="num>0">
+<div *ngFor="let i of images" class="col-3">
+  <img [src]="imgShow" class="card-img-top" alt="...">
+</div>
+<div></div>
+</div>

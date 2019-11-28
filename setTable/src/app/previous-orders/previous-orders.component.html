@@ -1,0 +1,13 @@
+<div *ngIf="allOrdersPrevious" >
+  <div *ngFor="let item of allOrdersPrevious">
+    {{item.date}} {{item.payment}} 
+    
+        <div *ngFor="let i of item.productOfOrder">{{i.product.nameProduct}}</div>
+        
+    
+      
+  </div>
+ 
+</div> 
+  <div *ngIf="allOrdersPrevious.length==0">אין הזמנות קודמות</div>
+  <button (click)="continue()" class="btn btn-primary">המשך בקניה</button>

@@ -1,0 +1,13 @@
+
+<label>סנן לפי צבע</label>
+<br>
+<select (change)="functionToCall();" [(ngModel)]="colorChange" id="ddlViewBy">
+  <option>בחר צבע</option>
+  <option *ngFor="let item of colorGroups" value="{{item}}">{{item}}</option>
+</select>
+<br>
+<label>סנן לפי סוג</label>
+<select (change)="functionToModel();" [(ngModel)]="ModelChange" id="ddlViewBy">
+  <option>בחר סוג</option>
+  <option *ngFor="let item of typeGroups" value="{{item}}">{{item}}</option>
+</select>
