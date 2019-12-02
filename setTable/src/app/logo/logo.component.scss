@@ -1,0 +1,71 @@
+
+// #div{
+//     width: inherit;
+//     height: 40vh;
+//     background-image: linear-gradient(to right, #666 ,white ,#666); 
+// }
+// img{
+    
+//      margin-left:10vw;
+//  }
+ #divimg{
+    position: relative;
+   bottom:10vw;
+     text-align: top;
+     display: inline-block;
+     width:50vw;
+     height: 30vh;
+     margin-left: 15vW;
+     margin-top: 23vh;
+    font-family: serif;
+     background-image: "logo.png";
+    background-color:transparent;
+ }
+ #information
+ {
+        background-color: #00a0e3;
+        width: 100%;
+        height: 40px;
+        margin-top: 0.5%;
+        color:dimgray;
+ }
+.login{  
+    cursor: pointer;    
+    width: 15vw;
+//    height: 2vh;
+    display: inline-block;
+    // background-color: #666;
+    margin-left: 15vw;
+    color:#007bff;
+    margin-top: 1vh;
+    font-size: 180%;
+    text-align: center;
+}
+.slideRight-001{
+    animation-name: slideRight;
+    -webkit-animation-name: slideRight;  
+    animation-duration: 1s; 
+    -webkit-animation-duration: 4s;
+    animation-timing-function: ease-in-out; 
+    -webkit-animation-timing-function: ease-in-out;    
+    visibility: visible !important; 
+}
+@keyframes slideRight {
+    0% {transform: translateX(-150%);}      
+    100% {transform: translateX(0%);}
+}
+@-webkit-keyframes slideRight {
+    0% {-webkit-transform: translateX(-150%);}  
+    100% {-webkit-transform: translateX(0%);}
+}
+p{
+    font-size: 1.5vw;
+    display: inline-block;
+   padding-left: 1vw;
+}
+#allP{
+    margin-left: 7vw;
+    margin-top: 1vh;
+}
+
+

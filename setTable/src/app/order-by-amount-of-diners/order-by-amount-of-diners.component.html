@@ -1,0 +1,50 @@
+<div style="direction:rtl;margin-right: 30%;
+margin-top:3%;">
+<h2>ביצוע הזמנה לפי כמות סועדים</h2>
+
+<p>בחר צלחת</p>
+<select class="form-control col-2"  [(ngModel)]="plate" id="ddlViewBy">
+  <option *ngFor="let item of allPlats" [ngValue]="item.idProduct">{{item.nameProduct}}{{item.color}}{{item.size}}</option>
+</select>
+
+<p>בחר כוס</p>
+<select class="form-control col-2" [(ngModel)]="glass" id="ddlViewBy">
+  <option *ngFor="let item of allGlasses" [ngValue]="item.idProduct">{{item.nameProduct}}{{item.color}}{{item.size}}</option>
+</select>
+
+<p>הכנס מספר סועדים</p>
+<input class="form-control col-4" type="number" [(ngModel)]="numDinners">
+<br>
+
+
+<button   data-toggle="modal" class="btn btn-primary"
+(click)="orderByAmountOfDiners()" >
+ אישור
+</button>
+<div id="resulte">{{resulte}}</div>
+</div> 
+
+<!-- The Modal
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <!-- <div class="modal-header">
+        <h4 class="modal-title"> הזמנה לפי כמות סועדים:</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <!-- <div class="modal-body">
+      {{resulte}}
+      </div> -->
+
+      <!-- Modal footer -->
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">סגור</button>
+      </div>
+
+    </div>
+  </div> -->
+<!-- </div> --> 
