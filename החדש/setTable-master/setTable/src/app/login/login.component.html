@@ -1,0 +1,18 @@
+<div class="container" style="direction:rtl">
+  <div class="row">
+      <h1 class="text-center login-title"> כניסת משתמש רשום</h1>
+      <div class="col-sm-6 col-md-4 col-md-offset-4" style="margin-right: 372px;
+      margin-top: 86px;">
+      
+          <div class="account-wall">
+              <img class="profile-img" src="..\..\assets\images\לקוח (2).png" alt="">
+              <form class="form-signin" (ngSubmit)="onSubmit()">
+              <input type="text" name="nameCustomer" class="form-control" [(ngModel)]="loginUser.nameCustomer" placeholder="הכנס שם" required autofocus>
+              <input type="password" name="passwordCustomer" class="form-control" [(ngModel)]="loginUser.passwordCustomer" placeholder="הכנס סיסמא" required>
+              <button class="btn btn-lg btn-primary btn-block" type="submit">
+                 כניסה</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>

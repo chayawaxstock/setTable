@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SetTable1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="numCategory" />
+    </Key>
+    <Property Name="numCategory" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nameCategory" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="idCustomer" />
+    </Key>
+    <Property Name="nameCustomer" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="8" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="idCustomer" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="street" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_idCust" FromRole="Customer" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="EditTable">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="idPlate" Type="Int32" />
+    <Property Name="idGlass" Type="Int32" />
+    <Property Name="idPlateBig" Type="Int32" />
+    <Property Name="imageAll" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="idOrder" />
+    </Key>
+    <Property Name="idOrder" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="idCustomer" Type="Int32" Nullable="false" />
+    <Property Name="paymant" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_idCust" FromRole="Order" ToRole="Customer" />
+    <NavigationProperty Name="ProductOfOrders" Relationship="Self.FK_order" FromRole="Order" ToRole="ProductOfOrder" />
+  </EntityType>
+  <EntityType Name="OrderBasket">
+    <Key>
+      <PropertyRef Name="idProduct" />
+    </Key>
+    <Property Name="idProduct" Type="Int32" Nullable="false" />
+    <Property Name="idCustomer" Type="Int32" Nullable="false" />
+    <Property Name="quantity" Type="Int32" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_OrderBasket_Product" FromRole="OrderBasket" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="idProduct" />
+    </Key>
+    <Property Name="idProduct" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nameProduct" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="price" Type="Double" Nullable="false" />
+    <Property Name="unitsInStock" Type="Int32" Nullable="false" />
+    <Property Name="numCategory" Type="Int32" Nullable="false" />
+    <Property Name="color" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="size" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="active" Type="Boolean" />
+    <Property Name="showInSite" Type="Boolean" />
+    <Property Name="img" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="quentityInShop" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="OrderBasket" Relationship="Self.FK_OrderBasket_Product" FromRole="Product" ToRole="OrderBasket" />
+    <NavigationProperty Name="ProductOfOrders" Relationship="Self.FK_orderProduct" FromRole="Product" ToRole="ProductOfOrder" />
+  </EntityType>
+  <EntityType Name="ProductOfOrder">
+    <Key>
+      <PropertyRef Name="idOrder" />
+      <PropertyRef Name="idProduct" />
+    </Key>
+    <Property Name="idOrder" Type="Int32" Nullable="false" />
+    <Property Name="idProduct" Type="Int32" Nullable="false" />
+    <Property Name="quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK_order" FromRole="ProductOfOrder" ToRole="Order" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_orderProduct" FromRole="ProductOfOrder" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_idCust">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="idCustomer" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="idCustomer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_order">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="ProductOfOrder" Type="Self.ProductOfOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="idOrder" />
+      </Principal>
+      <Dependent Role="ProductOfOrder">
+        <PropertyRef Name="idOrder" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderBasket_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="OrderBasket" Type="Self.OrderBasket" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="idProduct" />
+      </Principal>
+      <Dependent Role="OrderBasket">
+        <PropertyRef Name="idProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_orderProduct">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="ProductOfOrder" Type="Self.ProductOfOrder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="idProduct" />
+      </Principal>
+      <Dependent Role="ProductOfOrder">
+        <PropertyRef Name="idProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SetTable1Entities5" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="EditTables" EntityType="Self.EditTable" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="OrderBaskets" EntityType="Self.OrderBasket" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="ProductOfOrders" EntityType="Self.ProductOfOrder" />
+    <AssociationSet Name="FK_idCust" Association="Self.FK_idCust">
+      <End Role="Customer" EntitySet="Customers" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_order" Association="Self.FK_order">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="ProductOfOrder" EntitySet="ProductOfOrders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderBasket_Product" Association="Self.FK_OrderBasket_Product">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="OrderBasket" EntitySet="OrderBaskets" />
+    </AssociationSet>
+    <AssociationSet Name="FK_orderProduct" Association="Self.FK_orderProduct">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="ProductOfOrder" EntitySet="ProductOfOrders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

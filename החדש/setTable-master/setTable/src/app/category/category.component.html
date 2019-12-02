@@ -1,0 +1,39 @@
+
+<!-- Categories -->
+  <select [(ngModel)]="value" (change)="selectCategory($event.target.value)">
+    <option value="{{item.numCategory}}" *ngFor="let item of allCategories">
+    {{item.nameCategory}}
+    </option>
+  </select>
+
+ <!-- colors -->
+ <select >
+    <option>  ורוד </option>
+    <option>שחור לבן </option>
+    <option>צבעוני </option>
+    <option>זהב </option>
+    <option>כחול </option>
+    <option>בורדו </option>
+    <option>שמנת </option>
+    <option>צהוב </option>
+    <option>סגול </option>
+    <option>כסף </option>
+    <option>כתום </option>
+    <option>טורקיז </option>
+    <option>ירוק </option>
+    <option>ירוק </option>
+    <option>שקוף </option>
+    <option>חום </option>
+    <option>תכלת </option>
+  </select>
+
+  <select [(ngModel)]="value" >
+      <option  *ngFor="let product of allProductsOfCategory">
+      {{product.nameProduct}} {{product.model}}
+      <!-- <Product /> -->
+   
+      <!-- Create new component ItemProduct value="{{item.idProduct}}"-->
+      <!-- img name price --(change)="selectProduct($event.target.value)">-->
+      </option> 
+      </select> 
+    

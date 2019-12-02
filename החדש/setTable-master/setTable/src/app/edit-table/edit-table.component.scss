@@ -1,0 +1,188 @@
+.login:hover {
+    background-color: rgb(235, 233, 233);
+  }
+
+#music{
+    display:none;
+}
+@keyframes color {
+    0% {
+        transform: scale(0,0);
+    }
+
+    100% {
+        transform: scale(1,1);
+    }
+}
+// *הדיאלוג*/
+#divdialog {
+    display: block;
+}
+#dialog {
+    direction: rtl;
+    width: 90vw;
+    // opacity: 0.8;
+    color: #616c8b;
+    // overflow: hidden;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    margin-top: 5%;
+    margin-left: 5%;
+    animation-name: color;
+    animation-direction: normal;
+    animation-duration: 3s
+}
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+@media screen and (max-height: 2px) {
+    #all {
+        height: 4vh;
+    }
+}
+
+@media screen and (max-height: 1px) {
+    #all {
+        height: 4vh;
+    }
+    
+}
+
+@media screen and (max-height: 9px) {
+    #all {
+        height: 4vh;
+    }
+}
+
+@media screen and (max-height: 6px) {
+    #all {
+        height: 4vh;
+    }
+
+    #dialog {
+        height: 2vh;
+    }
+}
+
+@media screen and (max-height: 4px) {
+    #all {
+        height: 6vh;
+    }
+
+    #dialog {
+        height: 5vh;
+        margin-top: 10%;
+    }
+}
+
+@media screen and (max-height: 2px) {
+    #all {
+        height: 2vh;
+    }
+
+    #dialog {
+        height: 2vh;
+    }
+}
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+@media screen and (max-width: 720px) {
+    .buttonup {
+        width: 30px;
+        height: 30px;
+        font-size: 200%;
+    }
+}
+@media screen and (max-width: 375px) {
+   .buttonup {
+        width: 30px;
+        height: 30px;
+        font-size: 150%;
+    }
+}
+@media screen and (max-height: 2500px) {
+    #all {
+        height: 980px;
+    }
+}
+@media screen and (max-height: 1000px) {
+    #all {
+        height: 880px;
+    }
+}
+@media screen and (max-height: 900px) {
+    #all {
+        height: 780px;
+    }
+}
+@media screen and (max-height: 800px) {
+    #all {
+        height: 680px;
+    }
+}
+@media screen and (max-height: 700px) {
+    #all {
+        height: 580px;
+    }
+
+    #dialog {
+        height:35vh;
+    }
+}
+@media screen and (max-height: 500px) {
+    #all {
+        height: 380px;
+    }
+
+    #dialog {
+        height: 70%;
+    }
+}
+@media screen and (max-height: 320px) {
+    #all {
+        height: 180px;
+    }
+
+    #dialog {
+        height: 60%;
+    }
+}
+p{
+    color: dimgrey;
+    font-size: 3vw;
+}
+input{
+    margin-left: 42%;
+    width: 15%;
+    background-color: dodgerblue;
+    color: dimgray;
+}
